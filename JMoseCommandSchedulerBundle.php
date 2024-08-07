@@ -3,6 +3,7 @@
 namespace JMose\CommandSchedulerBundle;
 
 use JMose\CommandSchedulerBundle\DependencyInjection\JMoseCommandSchedulerExtension;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class JMoseCommandSchedulerBundle extends Bundle
@@ -12,7 +13,7 @@ class JMoseCommandSchedulerBundle extends Bundle
      *
      * @return JMoseCommandSchedulerExtension
      */
-    public function getContainerExtension()
+    public function getContainerExtension(): ?ExtensionInterface
     {
         $class = $this->getContainerExtensionClass();
 
@@ -22,7 +23,7 @@ class JMoseCommandSchedulerBundle extends Bundle
     /**
      * {@inheritdoc}
      */
-    protected function getContainerExtensionClass()
+    protected function getContainerExtensionClass(): string
     {
         return JMoseCommandSchedulerExtension::class;
     }
